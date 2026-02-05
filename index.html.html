@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sami Bajwa - Custom QR Code Design Services">
+    <meta name="author" content="Sami Bajwa">
+    <title>Sami Bajwa | Custom QR Code Design Services</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,500,700,900" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Navigation */
+        .navbar-default {
+            background-color: #fff;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c3e50 !important;
+        }
+        
+        .navbar-nav > li > a {
+            color: #333 !important;
+            font-weight: 500;
+        }
+        
+        /* Header */
+        .header-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+        
+        .header-section h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .header-section h2 {
+            font-size: 28px;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+        
+        .btn-custom {
+            background-color: #fff;
+            color: #667eea;
+            padding: 12px 40px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+        
+        .btn-custom:hover {
+            background-color: #764ba2;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        /* About Section */
+        .about-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .about-section h3 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+        
+        .about-section p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        /* Services Section */
+        .services-section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 60px;
+            color: #2c3e50;
+        }
+        
+        .service-box {
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .service-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .service-box i {
+            font-size: 50px;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        .service-box h4 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .service-box p {
+            color: #666;
+            font-size: 15px;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .stat-box h3 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .stat-box h5 {
+            font-size: 18px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Portfolio Section */
+        .portfolio-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+        
+        .portfolio-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: all 0.3s;
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(102, 126, 234, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-overlay h4 {
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .portfolio-overlay p {
+            color: rgba(255,255,255,0.9);
+            font-size: 16px;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+        }
+        
+        .contact-form {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .form-control {
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            padding: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .btn-submit {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 50px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer h5 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .footer p, .footer a {
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+        }
+        
+        .footer a:hover {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 18px;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #667eea;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#home">Sami Bajwa</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section id="home" class="header-section">
+        <div class="container">
+            <h1>Hello & Welcome</h1>
+            <h2>Example for Fiverr Clients</h2>
+            <a href="#about" class="btn btn-custom">Learn More</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h3 class="text-center">About My Services</h3>
+                    <p class="text-center">
+                        I will design a custom QR code that, when scanned, opens a professional landing page containing your entire business profile. This is perfect for printing on your physical business cards, flyers, or shop windows.
+                    </p>
+                    <p class="text-center">
+                        Transform your traditional marketing materials into interactive digital experiences. My custom QR codes bridge the gap between offline and online presence, making it easy for potential clients to access your complete business information instantly.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-box">
+                        <h3>500+</h3>
+                        <h5>QR Codes Created</h5>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-box">
+                        <h3>350+</h3>
+                        <h5>Landing Pages Designed</h5>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-box">
+                        <h3>50+</h3>
+                        <h5>5-Star Reviews</h5>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-box">
+                        <h3>450+</h3>
+                        <h5>Happy Clients</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">What I Offer</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-box">
+                        <i class="fa fa-qrcode"></i>
+                        <h4>Custom QR Code Design</h4>
+                        <p>Beautifully designed QR codes that match your brand identity and stand out on any marketing material.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-box">
+                        <i class="fa fa-desktop"></i>
+                        <h4>Professional Landing Pages</h4>
+                        <p>Mobile-responsive landing pages that showcase your business profile, services, and contact information perfectly.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-box">
+                        <i class="fa fa-address-card"></i>
+                        <h4>Digital Business Cards</h4>
+                        <p>Interactive digital business cards that can be easily shared and saved directly to smartphones.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-box">
+                        <i class="fa fa-paint-brush"></i>
+                        <h4>Brand Integration</h4>
+                        <p>Seamlessly integrate your logo, colors, and brand elements into the QR code and landing page design.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-box">
+                        <i class="fa fa-chart-line"></i>
+                        <h4>Analytics Tracking</h4>
+                        <p>Track QR code scans and visitor analytics to measure the effectiveness of your marketing campaigns.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-box">
+                        <i class="fa fa-print"></i>
+                        <h4>Print-Ready Files</h4>
+                        <p>High-resolution QR codes optimized for printing on business cards, flyers, posters, and signage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <h2 class="section-title">Recent Projects</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="https://via.placeholder.com/400x300/667eea/ffffff?text=Restaurant+QR+Menu" alt="Restaurant QR Code">
+                        <div class="portfolio-overlay">
+                            <h4>Restaurant Digital Menu</h4>
+                            <p>QR Code & Landing Page</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="https://via.placeholder.com/400x300/764ba2/ffffff?text=Real+Estate+Agent" alt="Real Estate Business Card">
+                        <div class="portfolio-overlay">
+                            <h4>Real Estate Agent Profile</h4>
+                            <p>Digital Business Card</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="https://via.placeholder.com/400x300/667eea/ffffff?text=Retail+Store" alt="Retail Store">
+                        <div class="portfolio-overlay">
+                            <h4>Retail Store Information</h4>
+                            <p>Shop Window QR Code</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="https://via.placeholder.com/400x300/764ba2/ffffff?text=Consultant+Portfolio" alt="Business Consultant">
+                        <div class="portfolio-overlay">
+                            <h4>Business Consultant</h4>
+                            <p>Professional Portfolio Page</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="https://via.placeholder.com/400x300/667eea/ffffff?text=Event+Registration" alt="Event QR Code">
+                        <div class="portfolio-overlay">
+                            <h4>Event Registration</h4>
+                            <p>QR Code for Flyers</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="https://via.placeholder.com/400x300/764ba2/ffffff?text=Product+Catalog" alt="Product Catalog">
+                        <div class="portfolio-overlay">
+                            <h4>Product Catalog</h4>
+                            <p>Interactive Product Gallery</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get Your Custom QR Code</h2>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="contact-form">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <select class="form-control">
+                                        <option>Select Service Type</option>
+                                        <option>Custom QR Code Design</option>
+                                        <option>Professional Landing Page</option>
+                                        <option>Digital Business Card</option>
+                                        <option>Complete Package</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <textarea class="form-control" rows="5" placeholder="Tell me about your project requirements..." required></textarea>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn-submit">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>About Sami Bajwa</h5>
+                    <p>Professional QR code designer specializing in creating custom QR codes linked to beautiful landing pages. Perfect for business cards, marketing materials, and digital presence.</p>
+                    <div class="social-links" style="margin-top: 20px;">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Info</h5>
+                    <p><i class="fa fa-phone"></i> Phone: XXXXXX</p>
+                    <p><i class="fa fa-envelope"></i> Email: contact@samibajwa.com</p>
+                    <p><i class="fa fa-map-marker"></i> Available for clients worldwide</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Sami Bajwa. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        // Smooth scrolling
+        $(document).ready(function(){
+            $('a[href^="#"]').on('click', function(event) {
+                var target = $(this.getAttribute('href'));
+                if( target.length ) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top - 70
+                    }, 1000);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
